@@ -11,15 +11,146 @@
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/JM-RockkckerGame.json", {onProgress: UnityProgress});
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    <style>
+    body {
+      background-image: url('background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      color: white;
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      font-family: "Fredoka", cursive;
+    }
+    
+    #main-title {
+      text-align: center;
+      font-size: 72px;
+      color: rgb(255, 171, 0);
+      text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff,
+                   0px 2px 0 #fff, 2px 0px 0 #fff, 0px -2px 0 #fff, -2px 0px 0 #fff;
+      margin-bottom: 0.3em; /* reduced bottom space */
+    }
+    
+    p {
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      font-style: italic;
+      margin: 0.3em 0; /* reduced top and bottom space */
+    }
+    
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 0 20px;
+      flex-wrap: wrap;
+      margin-top: 2em; /* ⬅ add extra spacing below the last <p> */
+    }
+    
+    .webgl-balanced-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      width: 100%;           /* take full width */
+      justify-content: space-between; /* push left and right items to edges */
+    }
+    
+    .instructions,
+    .spacer {
+      flex: 0 0 300px;   /* fixed base width */
+      max-width: 400px;  /* cap size */
+    }
+    
+    .instructions {
+      text-align: left;  /* keep text hugging left */
+    }
+    
+    .webgl-content {
+      flex: 0 0 auto;    /* don’t stretch */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .subtitle {
+      color: rgb(255, 171, 0);
+      text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff,
+                   0px 2px 0 #fff, 2px 0px 0 #fff, 0px -2px 0 #fff, -2px 0px 0 #fff;
+      font-size: 64px;
+      margin-bottom: 0.5em;
+      margin-top: 0.1em;
+    }
+    
+    ol {
+      padding-left: 1.2em;
+    }
+    
+    li {
+      margin-bottom: 16px;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 20px;
+    }
+    
+    /* Center Unity content */
+    .webgl-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 400px;
+    }
+    
+    /* Adjust Unity container size */
+    #unityContainer {
+      width: 640px;
+      height: 480px;
+      background: #000; /* fallback */
+    }
+    
+    .footer {
+      margin-top: 10px;
+      text-align: center;
+      color: #fff;
+    }      
+    </style>
   </head>
   <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">JM Rockkicker</div>
+  <h1 id="main-title"> Joshua's Rock Kicker</h1>
+  <p>This is Joshua's Black Belt project from Codeninjas Hacienda Heights</p>
+  <p>Replace with description of the game.</p>
+
+  <div class="content-container">
+    <div class="webgl-balanced-container">
+      <div class="instructions">
+        <h2 class="subtitle">How To Play</h2>
+        <ol>
+          <li>Replace with instruction 1</li>
+          <li>Replace with instruction 1</li>
+          <li>Replace with instruction 1</li>
+        </ol>
       </div>
+  
+      <div class="webgl-content">
+        <div id="unityContainer"></div>
+        <div class="footer">
+          <div class="webgl-logo"></div>
+          <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+          <div class="title">JM Rockkicker</div>
+        </div>
+      </div>
+  
+      <div class="spacer"></div>
     </div>
+  </div>    
   </body>
 </html>
