@@ -59,9 +59,10 @@
       display: grid;
       grid-template-columns: 300px 1fr 300px;
       align-items: start;
+      justify-items: stretch;
       width: 100%;
-      padding-left: 40px;
-      padding-right: 40px;
+      min-height: 480px; /* ⬅ matches Unity height */
+      padding: 40px;
       box-sizing: border-box;
     }
     
@@ -178,6 +179,7 @@
       flex-shrink: 0;
       grid-column: 2;
       margin: 0 auto;
+      align-self: center;
     }
     
     /* Prevent Unity from overlapping siblings */
